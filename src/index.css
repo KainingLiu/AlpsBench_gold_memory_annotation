@@ -1,0 +1,26 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@import "./styles/globals.css";
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-feature-settings: "kern" 1, "liga" 1;
+  }
+
+  /* Ensure react-resizable-panels outer wrappers fill height */
+  [data-group] {
+    height: 100%;
+  }
+  [data-group] > [data-panel] {
+    height: 100%;
+    overflow: hidden;
+  }
+  /* The inner div that Panel renders (className goes here) */
+  [data-panel] > div {
+    height: 100%;
+  }
+}
